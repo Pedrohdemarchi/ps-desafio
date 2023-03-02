@@ -13,7 +13,7 @@ class UpdateProdutoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class UpdateProdutoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'min:3', 'max:100'],
+            'descricao' => ['required', 'min:15', 'max:255'],
+            'quantidade' => ['required',],
+            'image' => 'image',
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'name.required' => "Esse campo é Obrigatorio",
+            'descricao.required' => "Esse campo é Obrigatorio",
+            'quantidade.required' => "Quantidade deve ser um numero inteiro natural. Esse campo é Obrigatorio",
+            'image.required' => "Esse campo é Obrigatorio",
         ];
     }
 }

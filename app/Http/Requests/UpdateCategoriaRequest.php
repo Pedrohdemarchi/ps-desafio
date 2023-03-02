@@ -11,10 +11,7 @@ class UpdateCategoriaRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return false;
-    }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,7 +21,15 @@ class UpdateCategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'min:3', 'max:100'],
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'name.required' => "Esse campo é Obrigatorio",
         ];
     }
 }

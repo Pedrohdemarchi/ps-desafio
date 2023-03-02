@@ -28,7 +28,7 @@
     },
     "git.confirmSync": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "files.autoSave": "onFocusChange",
+    "files.autoSave": "afterDelay",
     "trailing-spaces.trimOnSave": true,
     "editor.suggestSelection": "first",
     "editor.tabSize": 2,

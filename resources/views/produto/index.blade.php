@@ -33,7 +33,7 @@
                                         @foreach ($produtos as $produto)
                                             <tr>
                                                 <td>{{ $produto->id }}</td>
-                                                <td>{{ $produto->nome }}</td>
+                                                <td>{{ $produto->name }}</td>
                                                 <td>
                                                     <!-- botao editar -->
                                                     <a href="{{ route('produto.edit', $produto->id) }}">
