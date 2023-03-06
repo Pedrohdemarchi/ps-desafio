@@ -12,7 +12,10 @@ class Produto extends Model
     protected $filable = [
         'name',
         'descrição',
-        'quantidade'
+        'quantidade',
+        'preco',
+        'image',
+        'categoria_id'
     ];
 
     public function categoria()

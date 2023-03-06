@@ -29,6 +29,21 @@
     </div>
 </div>
 
+{{-- Preço --}}
+
+<div class="row">
+    <label class="col-sm-2 col-form-label">{{ __('Preço do Produto') }}</label>
+    <div>
+        <input type="text" id="preco" name="preco" value="{{ isset($produto) ? $produto->preco : old('preco') }}"
+            class="form-control @error('preco') is-invalid @enderror" required>
+        @error('preco')
+            <span class="invalid-feedback" role="alert">
+                <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+</div>
+
 {{-- Quantidade --}}
 
 <div class="row">

@@ -26,8 +26,10 @@ class StoreProdutoRequest extends FormRequest
         return [
             'name' => ['required', 'min:3', 'max:100'],
             'descricao' => ['required', 'min:15', 'max:255'],
+            'preco' => ['required', 'min:3'],
             'quantidade' => ['required'],
             'image' => 'image',
+            'categoria_id' => ['required'],
         ];
     }
 
@@ -37,6 +39,7 @@ class StoreProdutoRequest extends FormRequest
         return [
             'name.required' => "Esse campo é Obrigatorio",
             'descricao.required' => "Esse campo é Obrigatorio",
+            'preco.required' => "Esse campo é Obrigatorio",
             'quantidade.required' => "Quantidade deve ser um numero inteiro natural. Esse campo é Obrigatorio",
             'image.required' => "Esse campo é Obrigatorio",
         ];

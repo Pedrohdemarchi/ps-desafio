@@ -12,25 +12,25 @@ use Illuminate\Support\Facades\Storage;
 
 class ProdutoController extends Controller
 {
-    private $Produto;
-    private $Categoria;
+    private $produto;
+    private $categoria;
 
     public function __construct(Categoria $categoria, Produto $produto)
     {
-        $this->Categoria = $categoria;
-        $this->Produto = $produto;
+        $this->categoria = $categoria;
+        $this->produto = $produto;
     }
 
     public function index()
     {
-        $produtos = $this->Produto->all();
+        $produtos = $this->produto->all();
         return view('produto.index', compact('produtos'));
     }
 
 
     public function create()
     {
-        $categorias = $this->Categoria->all();
+        $categorias = $this->categoria->all();
         return view('produto.crud', compact('categorias'));
     }
 
@@ -40,6 +40,7 @@ class ProdutoController extends Controller
         $produto = new Produto();
         $produto->name = $request->input('name');
         $produto->descricao = $request->input('descricao');
+        $produto->preco = $request->input('preco');
         $produto->quantidade = $request->input('quantidade');
         if ($request->hasFile('image')) {
             $imagem = $request->file('image')->store('produtos', 'public');
@@ -57,25 +58,27 @@ class ProdutoController extends Controller
 
     public function show($id)
     {
-        $produto = $this->Produto->find('$id');
-        $produto->load('categoria');
+        $produto = $this->produto->find($id);
+       // $produto->load('categoria');
+       $produto->categoria;
         return response()->json($produto);
     }
 
 
     public function edit($id)
     {
-        $produto = $this->Produto->find($id);
-        $categorias = $this->Categoria->all();
+        $produto = $this->produto->find($id);
+        $categorias = $this->categoria->all();
         return view('produto.crud', compact('produto', 'categorias'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $produto = $this->Produto->find($id);
+        $produto = $this->produto->find($id);
         $produto->name = $request->input('name');
         $produto->descricao = $request->input('descricao');
+        $produto->preco = $request->input('preco');
         $produto->quantidade = $request->input('quantidade');
         if ($request->hasFile('image')) {
             Storage::delete('public/' . $produto->image); //excluindo a imagem
@@ -90,7 +93,7 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {
-        $produto = $this->Produto->find($id);
+        $produto = $this->produto->find($id);
         Storage::delete('public/' . $produto->image);
         $produto->delete();
 
