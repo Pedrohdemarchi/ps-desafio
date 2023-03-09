@@ -8,7 +8,7 @@ Pedrão Hamburgueria
     <section class="produto-container">
         <div class="produto-content">
             <div class="title-product">
-                <h1>Guarnições disponiveis:</h1>
+                <h1>Guarnições da casa:</h1>
                 <form class="select" action="productFilter">
                     <div class="select-container">
                         <label for="categoria">Filtrar por categoria:</label>
