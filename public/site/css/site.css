@@ -188,7 +188,7 @@ body{
     padding: 2.1vh;
     align-items: center;
     text-align: center;
-    cursor: pointer;
+    cursor:pointer;
     border-radius: 1.8vh;
     box-shadow: 2.9vh 2.9vh 5.6vh -3.2vh #3f4042;
     margin-bottom: 4vh;
@@ -274,6 +274,25 @@ body{
     display: flex;
 }
 
+.each-product0{
+    display: flex;
+    flex-direction: column;
+    padding: 2.1vh;
+    align-items: center;
+    text-align: center;
+    border-radius: 1.8vh;
+    box-shadow: 2.9vh 2.9vh 5.6vh -3.2vh #3f4042;
+    margin-bottom: 4vh;
+    margin-right: 3.7vh;
+    cursor:not-allowed;
+    opacity: 0.5;
+}
+
+.each-product0:hover{
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
 /*O pai é responsivo*/
 
 @media screen and (max-width: 1300px){
@@ -286,7 +305,7 @@ body{
     #social-media{
         display: none;
     }
-#text-footer{
+    #text-footer{
         margin-right: 20%;
     }
 }

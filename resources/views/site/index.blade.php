@@ -27,10 +27,10 @@ Pedrão Hamburgueria
                 @isset($produtos)
                     @if (count($produtos))
                         @foreach ($produtos as $produto)
-                                <div class="each-product" id="{{ $produto->id }}">
-                                    <div class="image-container">
-                                        <img src="/storage/{{ $produto['image'] }}">
-                                    </div>
+                                <div class="{{ $produto['quantidade'] == 0 ? 'each-product0' : 'each-product'}}" id="{{ $produto->id }}">
+                                        <div class="image-container">
+                                            <img src="/storage/{{ $produto['image'] }}">
+                                        </div>
                                     <div class="info-product">
                                         <h1>{{ $produto['name'] }}</h1>
                                         <p>{{ $produto->categoria->name}}</p>

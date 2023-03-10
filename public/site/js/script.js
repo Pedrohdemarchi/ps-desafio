@@ -24,11 +24,3 @@ for(card of cards){
     })
 }
 
-// var id = this.id
-//             const string =`.janela-modal${id}`
-//             search(string)
-
-    // modal.classList.add('abrir')
-    // if(e.target.id == 'fechar' || e.target.id == 'janela-modal1'){
-    //     modal.classList.remove('abrir')
-    // }
