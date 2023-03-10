@@ -9,7 +9,7 @@ Pedrão Hamburgueria
         <div class="produto-content">
             <div class="title-product">
                 <h1>Guarnições da casa:</h1>
-                <form class="select" action="productFilter">
+                <form class="select" action="{{ route('productFilter')}}">
                     <div class="select-container">
                         <label for="categoria">Filtrar por categoria:</label>
                         <select name="categoria" id="categoria">
@@ -27,17 +27,25 @@ Pedrão Hamburgueria
                 @isset($produtos)
                     @if (count($produtos))
                         @foreach ($produtos as $produto)
-                            <div class="each-product">
-                                <div class="image-container">
-                                    <img src="/storage/{{ $produto['image'] }}">
+                                <div class="each-product" id="{{ $produto->id }}">
+                                    <div class="image-container">
+                                        <img src="/storage/{{ $produto['image'] }}">
+                                    </div>
+                                    <div class="info-product">
+                                        <h1>{{ $produto['name'] }}</h1>
+                                        <p>{{ $produto->categoria->name}}</p>
+                                        <p>${{ $produto['preco'] }}</p>
+                                        <p>{{ $produto['quantidade'] }} unidades</p>
+                                    </div>
                                 </div>
-                                <div class="info-product">
-                                    <h1>{{ $produto['name'] }}</h1>
-                                    <p>{{ $produto->categoria->name}}</p>
-                                    <p>${{ $produto['preco'] }}</p>
-                                    <p>{{ $produto['quantidade'] }} unidades</p>
+                                <div class="janela-modal" id="janela-modal{{ $produto->id }}">
+                                    <div class="modal">
+                                        <button class="fechar" id="fechar{{ $produto->id }}">X</button>
+                                        <h1>Descrição do {{ $produto['name'] }}:</h1>
+                                        <br>
+                                        <p>{{ $produto->descricao }}</p>
+                                    </div>
                                 </div>
-                            </div>
                         @endforeach
                     @else
                         <p class="no-produto">Sem produtos</p>

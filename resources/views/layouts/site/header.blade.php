@@ -5,13 +5,11 @@
         </a>
     </div>
     <div id="header-search">
-        <form class="search"action="">
+        <form class="search"action="{{ route('productFind')}}">
             <input type="search" id="search" name="search">
             <button type="submit">
                 <span class="material-symbols-outlined">search</span>
             </button>
         </form>
     </div>
-
 </header>
-<hr>

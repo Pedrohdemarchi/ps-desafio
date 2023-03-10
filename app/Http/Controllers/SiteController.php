@@ -17,7 +17,7 @@ class SiteController extends Controller
     }
 
     public function productFind(){
-        $produtos = Categoria::where('name','LIKE' ("%{$_REQUEST ['search']}%"))->get();
+        $produtos = Produto::where('name','LIKE', "%{$_REQUEST ['search']}%")->get();
         $categorias=Categoria::all();
 
         return view('site.index', compact('produtos', 'categorias'));
