@@ -60,7 +60,20 @@ body{
     width: 100%;
     height: 100%;
     object-fit: scale-down;
+}
+
+.nav{
+    display: flex;
+    margin-right: 24vw;
+}
+
+.nav h3{
+    color: #f6f9ffd8;
     cursor: pointer;
+}
+
+.adm{
+    margin-right: 3vw;
 }
 
 .search{
@@ -305,13 +318,13 @@ body{
 .slider{
     margin: 0 auto;
     width: 80vw;
-    height: 70vh;
+    height: 75vh;
     overflow: hidden;
 }
 
 .slides{
     width: 300%;
-    height: 70vh;
+    height: 75vh;
     display: flex;
 }
 
@@ -377,7 +390,7 @@ margin-right: 30px;
 .navegation-auto{
     position: absolute;
     width: 80vw;
-    margin-top: 65.6vh;
+    margin-top: 70.6vh;
     display: flex;
     justify-content: center;
 }
@@ -406,12 +419,22 @@ margin-right: 30px;
     }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1140px){
+    .nav{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 780px){
     #social-media{
         display: none;
     }
     #text-footer{
         margin-right: 20%;
+    }
+
+    .nav{
+        display: none;
     }
 }
 
@@ -426,7 +449,7 @@ margin-right: 30px;
     }
 }
 
-@media screen and (max-width: 448px){
+@media screen and (max-width: 500px){
     .title-product h1{
         font-size: 6vh;
     }
