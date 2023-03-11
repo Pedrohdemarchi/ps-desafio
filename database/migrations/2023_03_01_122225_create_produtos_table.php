@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string(column: 'preco');
             $table->integer(column: 'quantidade');
             $table->string(column: 'image');
-            $table->foreignId(column: 'categoria_id')->constrained('categorias');
+            $table->foreignId(column: 'categoria_id')->constrained('categorias')->onDelete('cascade');
             $table->timestamps();
         });
     }

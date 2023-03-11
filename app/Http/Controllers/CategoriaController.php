@@ -58,9 +58,9 @@ class CategoriaController extends Controller
 
     public function destroy($id)
     {
-        $Categoria = $this->Categoria->find($id);
-        $Categoria->delete();
+        $categoria = $this->Categoria->find($id);
+        $categoria->delete();
 
-        return redirect()->route(route: 'categoria.index')->with('Success', 'A Plataforma foi excluida com sucesso');
+        return redirect()->route('categoria.index')->with('sucess', 'Categoria deletada com sucesso!');
     }
 }

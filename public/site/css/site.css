@@ -425,16 +425,18 @@ margin-right: 30px;
     }
 }
 
+@media screen and (max-width: 850px){
+    .nav{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 780px){
     #social-media{
         display: none;
     }
     #text-footer{
         margin-right: 20%;
-    }
-
-    .nav{
-        display: none;
     }
 }
 
@@ -446,6 +448,10 @@ margin-right: 30px;
     .modal{
 
         min-width: 250px;
+    }
+
+    .body-slide{
+        display: none;
     }
 }
 
@@ -461,13 +467,9 @@ margin-right: 30px;
     .title-product form{
         opacity: 0;;
     }
-
-    .body-slide{
-        display: none;
-    }
 }
 
-@media screen and (max-height: 380px){
+@media screen and (max-height: 480px){
     .body-slide{
         display: none;
     }

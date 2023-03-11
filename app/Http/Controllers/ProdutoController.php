@@ -94,7 +94,7 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         $produto = $this->produto->find($id);
-        Storage::delete('public/' . $produto->image);
+        Storage::disk('public')->delete(str_replace('/storage/', '', $produto->imagem));
         $produto->delete();
 
         return redirect()->route(route: 'produto.index')->with('Success', 'O Jogo foi excluida com sucesso');

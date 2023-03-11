@@ -11,7 +11,7 @@ class Produto extends Model
 
     protected $filable = [
         'name',
-        'descrição',
+        'descricao',
         'quantidade',
         'preco',
         'image',
