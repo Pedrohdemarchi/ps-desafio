@@ -43,7 +43,7 @@ Pedrão Hamburgueria
                 <h1>Guarnições da casa:</h1>
                 <form class="select" action="{{ route('productFilter')}}">
                     <div class="select-container">
-                        <label for="categoria">Filtrar por categoria:</label>
+                        <label for="categoria">Filtrar:</label>
                         <select name="categoria" id="categoria">
                             <option class="selecione" value="default">Selecione uma categoria</option>
                             <option value="">Mostrar todas</option>

@@ -436,7 +436,7 @@ margin-right: 30px;
         display: none;
     }
     #text-footer{
-        margin-right: 20%;
+        margin-right: 15%;
     }
 }
 
@@ -455,7 +455,7 @@ margin-right: 30px;
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 534px){
     .title-product h1{
         font-size: 6vh;
     }
@@ -464,13 +464,18 @@ margin-right: 30px;
         font-size: 2.7vh;
     }
 
-    .title-product form{
-        opacity: 0;;
+    #logo-footer{
+        width: 20%;
+        min-height:  15vh;
     }
 }
 
 @media screen and (max-height: 480px){
     .body-slide{
         display: none;
+    }
+
+    .select-container{
+        padding: 2.6vh;
     }
 }
