@@ -240,7 +240,7 @@ body{
 }
 
 .select-container{
-    padding: 4vh;
+    padding: 2.5vh;
 }
 .site-container{
     margin-top: 20vh;
@@ -466,11 +466,13 @@ margin-right: 30px;
 
     #logo-footer{
         width: 20%;
-        min-height:  15vh;
+        height:  15vh;
     }
+
+
 }
 
-@media screen and (max-height: 480px){
+@media screen and (max-height: 490px){
     .body-slide{
         display: none;
     }
@@ -478,4 +480,17 @@ margin-right: 30px;
     .select-container{
         padding: 2.6vh;
     }
+
+    @media screen and (max-width: 400px){
+
+    }
 }
+
+
+@media screen and (max-width: 395px){
+
+        #logo-footer img{
+        margin-bottom: 4vh;
+        }
+}
+
