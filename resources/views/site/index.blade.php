@@ -66,7 +66,8 @@ Pedrão Hamburgueria
                                 <div class="info-product">
                                     <h1>{{ $produto['name'] }}</h1>
                                     <p>{{ $produto->categoria->name}}</p>
-                                    <p>${{ $produto['preco'] }}</p>                                        <p>{{ $produto['quantidade'] }} unidades</p>
+                                    <p>${{ $produto['preco'] }}</p>
+                                    <p>{{ $produto['quantidade'] }} unidades</p>
                                 </div>
                              </div>
                             <div class="janela-modal" id="janela-modal{{ $produto->id }}">
@@ -79,7 +80,7 @@ Pedrão Hamburgueria
                             </div>
                         @endforeach
                     @else
-                        <p class="no-produto">Sem produtos</p>
+                        <p class="no-product">Sem produtos</p>
                     @endif
                 @endisset
             </div>
