@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('showcase', function (Blueprint $table) {
+        Schema::create('showcases', function (Blueprint $table) {
             $table->id();
             $table->string('title_showcase');
             $table->text('description_showcase');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('showcase');
+        Schema::dropIfExists('showcases');
     }
 };
