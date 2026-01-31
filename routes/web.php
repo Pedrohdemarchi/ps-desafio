@@ -9,6 +9,7 @@ use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ShowcaseController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ use App\Http\Controllers\ShowcaseController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Rota para o Site
+
+Route::get('Kook', [SiteController::class, 'index'])->name('Kook');
 
 Route::middleware('locale')->group(function () {
 
