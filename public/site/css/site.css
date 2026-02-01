@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+/* CSS do Footer*/
+
+#site-footer{
+    width: 100vw;
+
+    background-color: #2c3239;
+    color: #e1e2dc;
+
+    padding: 10px 30px;
+}
+
+#footer-container{
+    width: 100%;
+    min-height: 23vw;
+    padding: 4vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#slogan-footer{
+    font-size: clamp(9px, 1.1vw, 18px);
+    margin: 1vw 0 0 0;
+
+    text-align: start;
+    color: #e1e2dc;
+    cursor: pointer;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+#btn2{
+    font-size: clamp(9px, 1.1vw, 18px);
+    width: 100%;
+
+    text-align: start;
+    color: #e1e2dc;
+    cursor: pointer;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+#btn1 {
+    text-align: start;
+    color: #f8c800;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+
+    font-size: clamp(15px, 1.8vw, 32px);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    margin: 0 0 0.5vw 0;
+}
+
+#no-copy{
+    font-size: clamp(7px, 1vw, 16px);
+    text-align: start;
+    color: #868a8a;
+
+    font-family: 'Outfit';
+    font-weight: 500;
+    margin: 0.5vw 0;
+}
+
+#right-block{
+    height:95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#left-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    margin-right: 2vw;
+}
