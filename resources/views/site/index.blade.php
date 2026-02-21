@@ -16,7 +16,7 @@
                                 <div class="block-left">
                                     <h2 class="title-showcase">{{$showcase['title_showcase']}}</h2>
                                     <div class="text-showcase">{{$showcase['description_showcase']}}</div>
-                                    <div class="more">read more -></div>
+                                    <div class="more">read more →</div>
                                 </div>
                             </div>
                             <div class="right-card">
