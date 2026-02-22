@@ -217,6 +217,54 @@
     height: 9.4vw;
 }
 
+.showcase-nav {
+    position: fixed;
+    bottom: 3vh; /* em vez de top: 87vh */
+    left: 33%;
+    z-index: 999;
+
+    width: 33.9%;
+    padding: 0.7vw;
+    border-radius: 1.5vw;
+
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+
+     opacity: 0.4; /* bem suave */
+    transition: all 0.4s ease;
+}
+
+.showcase-nav:hover {
+    background: rgba(0, 0, 0, 0.85); /* escurece */
+    backdrop-filter: blur(8px);
+    opacity: 1;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    border-radius: 8px;
+    white-space: nowrap;
+
+    color: #e1e2dc;
+    font-family: Outfit;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.nav-item.active {
+    background-color: #f8c800;
+    color: #2c3239;
+}
+
 /* CSS do Header*/
 
 .header {
@@ -404,13 +452,12 @@
 }
 
 .hero-content {
-    height: 100%;
-    width: 43%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #e1e2dc;
     padding: 2vw;
+    margin-bottom: 10vw;
 }
 
 .hero-content h2{
@@ -421,10 +468,10 @@
     font-family: Outfit;
     font-weight: 800;
     font-style: ExtraBold;
-    font-size: 14.4px;
+    font-size: 1vw;
     leading-trim: NONE;
     line-height: 100%;
-    letter-spacing: 4px;
+    letter-spacing: 0.25vw;
     text-transform: uppercase;
     color: #f8c800;
     display: flex;
@@ -440,9 +487,9 @@
     font-family: Shrikhand;
     font-weight: 400;
     font-style: oblique 9deg;
-    font-size: 70.4px;
+    font-size: 4.2vw;
     leading-trim: NONE;
-    line-height: 80px;
+    line-height: 4.5vw;
     letter-spacing: 0%;
     color: #e1e2dc;
 }
@@ -456,9 +503,15 @@
     font-family: Outfit;
     font-weight: 700;
     font-style: Bold;
-    font-size: 14.4px;
+    font-size: 0.9vw;
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0px;
 
+}
+
+/* CSS Golbal */
+
+html {
+    scroll-behavior: smooth;
 }

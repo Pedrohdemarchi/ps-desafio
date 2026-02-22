@@ -5,12 +5,19 @@
 @endsection
 
 @section('conteudo')
+    <div class="showcase-nav">
+        @foreach ($showcases as $index => $showcase)
+            <a href="#showcase-{{ $index }}" class="nav-item">
+                {{ $showcase['title_showcase'] }}
+            </a>
+        @endforeach
+    </div>
     <section class="showcase-container">
         <div class="showcases">
             @isset($showcases)
                 @if(count($showcases))
-                    @foreach ($showcases as $showcase)
-                        <div class="card-showcase">
+                    @foreach ($showcases as $index => $showcase)
+                        <div class="card-showcase" id="showcase-{{ $index }}">
                             <div class="left-card">
                                 <img src="{{ asset('storage/' . $showcase['logo_showcase']) }}" class="logo-showcase">
                                 <div class="block-left">
