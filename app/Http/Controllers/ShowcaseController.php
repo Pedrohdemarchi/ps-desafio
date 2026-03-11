@@ -28,19 +28,21 @@ class ShowcaseController extends Controller
 
     public function store(Request $request)
     {
-        $data =  $request->all();
+        $data = $request->all();
 
-        // Se enviou arquivo logo_showcase
+        // Tratar arquivos
         if ($request->hasFile('logo_showcase')) {
-            // Armazena no disco 'public' dentro da pasta 'logos' (você pode mudar a pasta)
             $data['logo_showcase'] = $request->file('logo_showcase')->store('logos', 'public');
         }
 
-        // Se enviou arquivo image_showcase
         if ($request->hasFile('image_showcase')) {
             $data['image_showcase'] = $request->file('image_showcase')->store('images', 'public');
         }
 
+        // Garantir que tag_showcase seja array (JSON)
+        $data['tag_showcase'] = $request->tag_showcase ?? [];
+
+        // Criar o showcase
         $this->showcase->create($data);
 
         return redirect()->route('showcase.index')->with('success','Criado com Sucesso');
@@ -62,18 +64,19 @@ class ShowcaseController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data =  $request->all();
+        $data = $request->all();
 
-        // Se enviou arquivo logo_showcase
+        // Tratar arquivos
         if ($request->hasFile('logo_showcase')) {
-            // Armazena no disco 'public' dentro da pasta 'logos' (você pode mudar a pasta)
             $data['logo_showcase'] = $request->file('logo_showcase')->store('logos', 'public');
         }
 
-        // Se enviou arquivo image_showcase
         if ($request->hasFile('image_showcase')) {
             $data['image_showcase'] = $request->file('image_showcase')->store('images', 'public');
         }
+
+        // Garantir que tag_showcase seja array
+        $data['tag_showcase'] = $request->tag_showcase ?? [];
 
         $showcase = $this->showcase->find($id);
         $showcase->update($data);

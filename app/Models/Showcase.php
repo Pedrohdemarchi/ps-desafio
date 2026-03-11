@@ -10,8 +10,15 @@ class Showcase extends Model
     use HasFactory;
     protected $fillable = [
         'title_showcase',
+        'subtitle_showcase',
         'description_showcase',
+        'subdescription_showcase',
         'logo_showcase',
+        'tag_showcase',
         'image_showcase' 
+    ];
+
+    protected $casts = [
+        'tag_showcase' => 'array',
     ];
 }

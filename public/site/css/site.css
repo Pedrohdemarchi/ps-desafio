@@ -10,7 +10,7 @@
 /* CSS do Footer*/
 
 #site-footer{
-    width: 100vw;
+    width: 100%;
 
     background-color: #2c3239;
     color: #e1e2dc;
@@ -20,7 +20,7 @@
 
 #footer-container{
     width: 100%;
-    min-height: 23vw;
+    min-height: clamp(200px, 23vw, 300px);
     padding: 4vw;
 
     display: flex;
@@ -98,18 +98,16 @@
 /* CSS do Showcase*/
 
 .logo-showcase{
-    width: 17vw;
-    height: 11.2vw;      /* altura que você quer */
+    width: clamp(120px, 17vw, 260px);
+    height: auto;      /* altura que você quer */
     object-fit: cover;  /* corta mantendo proporção */
     object-position: top;
 }
 
-.image-showcase{
-    width: 32vw;;
-}
 
 .showcases{
-    width: 100vw;
+    width:100%;
+    margin:auto;
 
     display: flex;
     flex-direction: column;
@@ -119,21 +117,29 @@
 .card-showcase{
     height: 100%;
     width: 100%;
-    padding: 11% 7%;
+    padding: clamp(40px, 5vw, 80px) clamp(2vw, 4vw, 6vw);
 
     background-color: #2c3239;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    gap: 10%;
+    align-items: center;
 }
 
 .left-card{
-    width: 57vw;
+    flex: 1.1;
     margin-top: 3vw;
 }
 
+.right-card{
+    flex: 1;
+    width: auto;
+}
+
 .block-left{
-    margin-left: 8vw;
+    margin-left: 5vw;
 }
 
 .title-showcase{
@@ -151,9 +157,8 @@
 .text-showcase{
     font-family: Outfit;
     font-style: Light;
-    font-size: 1.1vw;
-    leading-trim: NONE;
-    line-height: 2vw;
+    font-size:1.1vw;
+    line-height: 1.8;
     letter-spacing: 0px;
     opacity: 80%;
 
@@ -167,21 +172,21 @@
     font-family: Outfit;
     font-weight: 700;
     font-style: Bold;
-    font-size: 1.3vw;
-    leading-trim: NONE;
+    font-size:1.3vw;
     line-height: 100%;
     letter-spacing: 0px;
 
     color: #f8c800;
 }
 
+.image-showcase{
+    width: 78%;
+}
+
 .card-showcase:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-.card-showcase:nth-child(even) .left-card {
-    margin-left: vw;
-}
 
 .card-showcase:nth-child(odd) {
     background-color: #e1e2dc;
@@ -200,8 +205,12 @@
     color: #eb5b48;
 }
 
-.card-showcase:nth-child(even) .left-card {
-    margin-left: 6vw;
+.card-showcase:nth-child(even) .right-card {
+    margin-left:5%;
+}
+
+.card-showcase:nth-child(odd) {
+    gap:6vw;
 }
 
 .card-showcase:nth-child(even) .text-showcase{
@@ -209,33 +218,48 @@
 }
 
 .card-showcase:nth-child(even) .logo-showcase{
-    height: 10.2vw;
+    height: clamp(80px, 10vw, 500px);
 }
 
 .card-showcase:last-child .logo-showcase{
-    width: 17vw;
-    height: 9.4vw;
+    margin-left: 5%;
+    width: clamp(120px,17vw,260px);
+    height: auto;
 }
 
 .showcase-nav {
     position: fixed;
-    bottom: 3vh; /* em vez de top: 87vh */
-    left: 33%;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+
     z-index: 999;
 
-    width: 33.9%;
-    padding: 0.7vw;
-    border-radius: 1.5vw;
+    width: auto;
+    max-width: 80vw; /* limita crescimento */
+
+    padding: 8px 14px;
+    border-radius: 1vw;
 
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
     overflow-x: auto;
+    overflow-y: hidden;
 
     background: rgba(0,0,0,0.7);
     backdrop-filter: blur(8px);
 
-     opacity: 0.4; /* bem suave */
+    scrollbar-width:none;
+
+    opacity: 0.4;
     transition: all 0.4s ease;
+}
+
+.showcase-nav::-webkit-scrollbar {
+    display:none;
 }
 
 .showcase-nav:hover {
@@ -245,13 +269,16 @@
 }
 
 .nav-item {
-    padding: 10px 20px;
+    padding: clamp(6px, 0.6vw, 10px) clamp(10px, 1.2vw, 18px);
     border-radius: 8px;
+
     white-space: nowrap;
 
     color: #e1e2dc;
     font-family: Outfit;
     font-weight: 600;
+
+    font-size: clamp(12px, 0.9vw, 15px);
 
     transition: 0.3s;
 }
@@ -271,16 +298,16 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 50px;
+    padding: 1.38vw 5vw;
     z-index: 1000;
 
     background: transparent;
     backdrop-filter: none;
-    transition: 0.4s ease; /* animação suave */
+    transition: 0.6s ease; /* animação suave */
 }
 
 .header.scrolled {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(8px);
 }
 
@@ -294,7 +321,7 @@
     font-family: Outfit;
     font-weight: 700;
     font-style: Bold;
-    font-size: 1.5vw;
+    font-size: clamp(18px,1.7vw,28px);
     line-height: 100%;
     letter-spacing: 0px;
     color: #e1e2dc;
@@ -304,6 +331,7 @@
 
 .menu {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -312,8 +340,7 @@
     font-family: Outfit;
     font-weight: 500;
     font-style: Bold;
-    font-size: 17px;
-    leading-trim: NONE;
+    font-size: clamp(14px,1.2vw,30px);
     line-height: 100%;
     letter-spacing: 0px;
 
@@ -322,53 +349,267 @@
 .menu a:hover {
     color: #318a7f;
 }
+/* Dropdown principal */
 
 .menu .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Conteúdo do dropdown (escondido por padrão) */
-.menu .dropdown-content {
-    display: none;
+
+.dropbtn {
+    color: #e1e2dc;
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 1.2vw;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropbtn:hover {
+    color: #318a7f;
+}
+
+/* Conteúdo do dropdown */
+.dropdown::after{
+    content: "";
     position: absolute;
-    top: 100%; /* fica abaixo do botão */
     left: 0;
-    background: rgba(0,0,0,0.8);
-    min-width: 200px;
-    padding: 10px 0;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    top: 100%;
+    width: 100%;
+    height: 60px; /* altura do espaço entre botão e dropdown */
+}
+
+.menu .dropdown-content {
+    padding: 2vw;
+    background: rgba(0,0,0,0.75);
+    border-radius: 1vw;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* suporte safari */
+}
+
+.dropdown-content {
+    position: fixed;
+    top: 4.8vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(1100px, 90vw);
+    padding: 3vw;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 1.6vw;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
     z-index: 1000;
 }
 
-/* Links dentro do dropdown */
-.menu .dropdown-content a {
-    color: #e1e2dc; /* mantém o padrão do seu menu */
-    padding: 8px 20px;
-    text-decoration: none;
-    display: block;
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -2.1%; /* ajusta a distância acima do dropdown */
+    left: 62%;  /* centraliza horizontalmente */
+
+    
+    width: 0;
+    height: 0;
+
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgba(0,0,0,0.75); /* mesma cor do dropdown */
+
+    z-index: 1001; /* um pouco acima do dropdown */
+}
+
+.menu-item{
+    margin-bottom: 3%;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* Coluna esquerda - b1 */
+.b1 {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.b1 .title_drop {
+    font-family: Outfit;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #E1E2DC;
+    opacity: 0.6;
+    font-size: 1rem;
+    margin-bottom: 7%;
+}
+
+.b1 .subtitle_drop {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.b1 .subtitle_drop a {
+    color: #e1e2dc;
     font-family: Outfit;
     font-weight: 500;
-    font-style: Bold;
-    transition: background 0.2s;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-.menu .dropdown-content a:hover {
-    background-color: rgba(255,255,255,0.1);
+.b1 .subtitle_drop a:hover,
+.b1 .subtitle_drop a.active {
+    color: #318a7f;
+    font-weight: 700;
+    transition: all 1s;
 }
 
-/* Mostra o dropdown ao passar o mouse */
-.menu .dropdown:hover .dropdown-content {
+/* Coluna direita - b2 */
+.b2 {
+    flex: 2;
+    display: flex;
+    gap: 20px;
+    min-width: 300px;
+}
+
+.leftdrop {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leftdrop .title_drop {
+    font-family: Outfit;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #E1E2DC;
+    opacity: 0.6;
+    font-size: 1rem;
+    margin-bottom: 8%;
+}
+
+
+.leftdrop .subtitle_drop a {
     display: block;
+    color: #e1e2dc;
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.description-drop{
+    margin-top: 4%;
+    opacity: 0.7;
+    height: 75px;
+}
+
+/* colunas fixas */
+.tag_block {
+    display: flex;
+    gap: 12px;
+    margin-top: 50%;
+}
+
+.tag_blockL,
+.tag_blockR {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;  /* novo: alinha no topo da coluna */
+    align-items: flex-start;      /* novo: não estica as tags */
+}
+
+/* tags ocupam só o espaço do texto */
+.dropdown-content .tag_block a {
+    display: inline-flex;           /* volta pro flex */
+    align-items: center;            /* centraliza vertical */
+    justify-content: center;        /* centraliza horizontal */
+
+    width: auto;                    /* só o tamanho do texto */
+    border-radius: 0.5vw;
+    padding: 8px 14px; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+
+
+    transition: all 1s ease !important;
+
+    background-color: #e1e2dc;
+    color: #2c3239;    
+
+
+}
+
+
+
+
+
+/* Lado direito da imagem */
+.rightdrop {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightdrop .image-drop {
+    width: min(320px,22vw);
+    border-radius: 0.3vw;
+    object-fit: cover;
+}
+
+#image-wrapper{
+    position: relative;
+}
+
+.image-layer{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:70%;
+    object-fit:cover;
+
+    opacity:0;
+    transition: opacity 1s ease;
+}
+
+.image-layer.active{
+    position: relative;
+    opacity:1;
 }
 
 /* Opção quando não há showcases */
-.dropdown-content .no-showcase {
+.no-showcase {
     color: #868a8a;
-    padding: 8px 20px;
     font-family: Outfit;
     font-weight: 400;
 }
+
 
 .login {
     display: flex;
@@ -378,12 +619,46 @@
     font-family: Outfit;
     font-weight: 500;
     font-style: Bold;
-    font-size: 17px;
-    leading-trim: NONE;
+    font-size: 1.2vw;
     line-height: 100%;
     letter-spacing: 0px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+#b2-content{
+    position: relative;
+    overflow: hidden;
+}
+
+#b2-content,
+#b2-image {
+    transition: 1s ease;
+}
+
+
+#b2-wrapper{
+    position: relative;
+}
+
+.b2-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.b2-layer.active{
+    position: relative; /* mantém altura do container */
+    opacity: 1;
+}
+
+.retaV{
+    margin-right: 4%;
 }
 
 .material-symbols-outlined {
@@ -396,9 +671,9 @@
 
 .hero {
     position: relative;
-    height: 200vh; 
+    height: 180vh; 
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero::after {
@@ -421,12 +696,14 @@
 
 .video-bg {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%) scale(0.92);
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
+
     z-index: -2;
 }
 
@@ -443,12 +720,11 @@
 }
 
 .centralizador{
-    height: 73%;
+    height: 87%;
     width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .hero-content {
@@ -469,7 +745,6 @@
     font-weight: 800;
     font-style: ExtraBold;
     font-size: 1vw;
-    leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0.25vw;
     text-transform: uppercase;
@@ -488,7 +763,6 @@
     font-weight: 400;
     font-style: oblique 9deg;
     font-size: 4.2vw;
-    leading-trim: NONE;
     line-height: 4.5vw;
     letter-spacing: 0%;
     color: #e1e2dc;
@@ -503,13 +777,22 @@
     font-family: Outfit;
     font-weight: 700;
     font-style: Bold;
-    font-size: 0.9vw;
-    leading-trim: NONE;
+    font-size:0.9vw;
     line-height: 100%;
     letter-spacing: 0px;
 
 }
 
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/*.bg-animation{
+
+}*/
+    
 /* CSS Golbal */
 
 html {

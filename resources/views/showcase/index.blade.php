@@ -116,9 +116,25 @@
                             </div>
 
                             <div class="form-group col-md-12 col-sm-12">
+                                <h5 class="modal-title col-12 text-dark" id="serviceModalLabel">Subtitulo</h5>
+                                <input type="string" id="detalhes-subtitle_showcase" name="detalhes-subtitle_showcase" class="form-control" readonly>
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12">
                                 <h5 class="modal-title col-12 text-dark" id="serviceModalLabel">Descrição</h5>
                                 <input type="text" id="detalhes-description_showcase" name="detalhes-description_showcase" class="form-control"
                                     readonly>
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12">
+                                <h5 class="modal-title col-12 text-dark" id="serviceModalLabel">Subdescrição</h5>
+                                <input type="text" id="detalhes-subdescription_showcase" name="detalhes-subdescription_showcase" class="form-control"
+                                    readonly>
+                            </div>
+
+                            <div class="form-group col-md-12 col-sm-12">
+                                <h5 class="modal-title text-dark">Tags</h5>
+                                <div id="detalhes-tag_showcase"></div>
                             </div>
 
                             <img id="detalhes-logo_showcase" class="form-group col-md-6 col-sm-12" />
@@ -150,6 +166,17 @@
                 $("#detalhes-description_showcase").val(resposta.description_showcase);
                 $("#detalhes-logo_showcase").attr('src', '/storage/' + resposta.logo_showcase);
                 $("#detalhes-image_showcase").attr('src', '/storage/' + resposta.image_showcase);
+                $("#detalhes-subtitle_showcase").val(resposta.subtitle_showcase);
+                $("#detalhes-subdescription_showcase").val(resposta.subdescription_showcase);
+                $("#detalhes-tag_showcase").html('');
+
+                if (resposta.tag_showcase) {
+                    resposta.tag_showcase.forEach(function(tag) {
+                        $("#detalhes-tag_showcase").append(
+                            '<span class="badge badge-primary mr-1">' + tag + '</span>'
+                        );
+                    });
+                }
             });
         })
         /* js para abrir Modal de excluir de forma dinâmica */

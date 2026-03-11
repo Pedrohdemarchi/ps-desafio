@@ -21,6 +21,7 @@
 
     @include('layouts.site.footer')
 
+    <script src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js"></script>
     <script src="{{asset('site/js/script.js')}}"></script>
 </body>
 </html>

@@ -36,5 +36,6 @@
                 @endif
             @endisset
         </div>
+        <div class="bg-animation" data-us-project=""></div>
     </section>
 @endsection
