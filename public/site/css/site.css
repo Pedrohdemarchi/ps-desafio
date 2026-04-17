@@ -878,6 +878,193 @@ img{
     height: 400px;
 }
 
+@media (max-width: 1024px) {
+     .mapa{
+        height: 200px;
+    }
+
+    .tell{
+        font-size: 2vw;
+        color: #FFFFFF;
+    }
+
+    .cargorep{
+        font-size: 2vw;
+        color: #FFFFFF;
+    }
+
+    .Nomerep{
+        font-size: 2.2vw;
+        color: #FFFFFF;
+    }
+
+    .secundario{
+        font-size: 2vw;
+        color: #FFFFFF;
+        margin-bottom: 2.5vw;
+    }
+
+    .blue{
+        font-size: 3vw;
+        color: #FFFFFF;
+    }
+
+    .representante{
+        background-color: #09A0DB;
+        padding: 11vw 6vw;
+    }
+
+    .fotoRep{
+        height: 80%;
+        width: 100%;
+        object-position: center 30%; /* garante centralização */
+
+    }
+
+    .card-showcase{
+        flex-direction: column;
+        margin-bottom: 0;
+        padding: 0vw 0vw;
+        gap: 0;
+        min-height: auto; /* garante altura real */
+    }
+
+    .card-showcase:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .right-card{
+        margin: 0;
+    }
+
+    .left-card{
+        padding: 9vw 6vw 4vw 9vw;
+        flex: 0;
+    }
+
+    .block-left{
+        margin-left: 0;
+    }
+
+    .card-showcase:nth-child(even) .right-card {
+        margin-left:0;
+    }
+
+    .image-showcase{
+        height: 55vw;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+    }
+
+    .card-showcase:nth-child(2) .logo-showcase {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .text-showcase{
+        font-size: 2vw;
+        width: 100%;
+    }
+
+    .card-showcase:nth-child(even) .text-showcase{
+        width: 100%;
+    }
+
+    .title-showcase{
+        font-size: 2.4vw;
+    }
+
+    .hero {
+        height: 32vh; 
+    }
+
+    .hero::after {
+        height: 0%; /* controla tamanho do fade */
+    }
+
+    .hero-content{
+        display: none;
+    }
+
+    .none{
+        display: block;
+        font-family: Outfit;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 2.3vw;
+        color: #FFFFFF;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .reta{
+        width: 8vw;
+        margin-right: 1.8vw;
+    }
+    
+    .login {
+        padding: 1vw 2vw;
+        background-color: #09A0DB;
+        border-radius: 0.3vw;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #e1e2dc;
+        font-family: Outfit;
+        font-weight: 500;
+        font-style: Bold;
+        font-size: 2vw;
+        line-height: 100%;
+        letter-spacing: 0px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .logogrande {
+        display: block;
+        position: absolute;
+        width: 40%;
+        top: 20vw;
+        left: 30%;
+        z-index: 1000;
+    }
+
+    .showcase-nav {
+        display: none;
+    }
+
+    .boxmobilehistory{
+        display: block;
+        padding: 9vw;
+        background-color: #09A0DB;
+    }
+
+    .historymobile{
+        font-family: Outfit;
+        font-weight: 250;
+        font-style: ExtraLight;
+        font-size: 2vw;
+        line-height: 18px;
+        letter-spacing: 0%;
+        color: #FFFFFF;
+
+    }
+
+    .historymobiletitle{
+        font-family: Outfit;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 2.7vw;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #FFFFFF;
+        margin-bottom: 5vw;
+    }
+}
+
 @media (max-width: 768px) {
 
     .mapa{
