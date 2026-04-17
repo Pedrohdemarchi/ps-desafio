@@ -24,7 +24,7 @@ use App\Http\Controllers\SiteController;
 
 //Rota para o Site
 
-Route::get('Kook', [SiteController::class, 'index'])->name('Kook');
+Route::get('Home', [SiteController::class, 'index'])->name('Home');
 
 Route::middleware('locale')->group(function () {
 

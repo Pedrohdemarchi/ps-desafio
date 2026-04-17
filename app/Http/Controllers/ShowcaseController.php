@@ -14,16 +14,19 @@ class ShowcaseController extends Controller
         $this->showcase = $showcase;
     }
 
-    public function index()
-    {
-        $showcases = $this->showcase->all();
+    public function index(){
+        $showcases = $this->showcase->paginate(10);
 
-        return view('showcase.index', compact('showcases'));
+        return view('showcase.index', [
+            'showcases' => $showcases,
+            'activePage' => 'showcase-management'
+        ]);
     }
 
-    public function create()
-    {
-        return view('showcase.crud');
+    public function create(){
+        return view('showcase.crud', [
+            'activePage' => 'showcase-management'
+        ]);
     }
 
     public function store(Request $request)
@@ -55,11 +58,13 @@ class ShowcaseController extends Controller
         return response()->json($showcase);
     }
 
-    public function edit($id)
-    {
+    public function edit($id){
         $showcase = $this->showcase->find($id);
 
-        return view('showcase.crud', compact('showcase'));
+        return view('showcase.crud', [
+            'showcase' => $showcase,
+            'activePage' => 'showcase-management'
+        ]);
     }
 
     public function update(Request $request, $id)
