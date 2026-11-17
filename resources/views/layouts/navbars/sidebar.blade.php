@@ -18,6 +18,20 @@
                 </a>
             </li>
 
+            <li class="nav-item{{ $activePage == 'feedback-management' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('feedback.index') }}">
+                    <i class="material-icons">rate_review</i>
+                    <p>{{ __('Feedbacks') }}</p>
+                </a>
+            </li>
+
+            <li class="nav-item{{ $activePage == 'obras-entregues-management' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('obras-entregues.index') }}">
+                    <i class="material-icons">engineering</i>
+                    <p>{{ __('Obras Entregues') }}</p>
+                </a>
+            </li>
+
             <!-- Relacionados ao admin -->
             @if (Auth::user()->access_level == 0)
 

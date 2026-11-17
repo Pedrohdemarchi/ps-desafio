@@ -1,18 +1,77 @@
-<footer id="site-footer">
-    <div id="footer-container">
-        <div id="right-block">
-            <div id="logo-slogan">
-                <div id="btn1"><img src="{{ asset('video/Group.png') }}" class="logofot"></div>
-                <div id="btn2">Logística Internacional</div>
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- PARTE SUPERIOR -->
+        <div class="footer-top">
+
+            <!-- LOGO -->
+            <div class="footer-logo">
+                <img
+                    src="{{ asset('video/LogoBranco.png') }}"
+                    alt="ML Faria - Engenharia de Estruturas"
+                >
             </div>
+
+            <!-- NAVEGAÇÃO -->
+            <nav class="footer-navigation">
+
+                <a href="{{ route('Home') }}">Home</a>
+
+                <a href="{{ route('SobreNos') }}">Sobre nós</a>
+
+                <a href="{{ route('Portifolio') }}">Portfólio</a>
+
+                <a href="{{ route('Contato') }}">Contatos</a>
+
+            </nav>
+
         </div>
-        <div id="left-block">
-            <div id="btn1">
-                <i class="fab fa-instagram ajuste" onclick="openPage('https://www.instagram.com/vixshipping/')" ></i>
-                <i class="fab fa-linkedin ajuste"  onclick="openPage('https://www.linkedin.com/in/vix-shipping-9a3603266/')"></i>
-                <i class="fab fa-whatsapp ajuste"  onclick="openPage('https://wa.me/5555279952930?text=Ol%C3%A1%2C%20somos%20a%20Vix%20Shipping.')"></i>
+
+        <!-- DIVISÓRIA -->
+        <div class="footer-divider"></div>
+
+        <!-- PARTE INFERIOR -->
+        <div class="footer-bottom">
+
+            <div class="footer-copyright">
+                Todos os direitos reservados © 2026 UI e UX by KOOK st.
             </div>
-            <div id="no-copy">© 2026 Todos os direitos reservados • Desenvolvido por KOOK</div>
+
+            <!-- REDES SOCIAIS -->
+            <div class="footer-social">
+
+                <!-- WHATSAPP -->
+                <a
+                    href="https://wa.me/5555279952930"
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a
+                    href="#"
+                    target="_blank"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- LINKEDIN -->
+                <a
+                    href="#"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
         </div>
+
     </div>
+
 </footer>

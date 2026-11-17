@@ -9,8 +9,8 @@
     <title>
         {{ $activePage }} - {{ config('app.name') }} CMS
     </title>
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('video/LogoTitleSite.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('video/LogoTitleSite.png') }}">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <!--     Fonts and icons     -->

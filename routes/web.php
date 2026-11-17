@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ObraEntregueController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ShowcaseController;
 use App\Http\Controllers\SiteController;
 
@@ -25,14 +27,14 @@ use App\Http\Controllers\SiteController;
 //Rota para o Site
 
 Route::get('Home', [SiteController::class, 'index'])->name('Home');
+Route::get('Sobre-Nos', [SiteController::class, 'sobre'])->name('SobreNos');
+Route::get('Portifólio', [SiteController::class, 'portifolio'])->name('Portifolio');
+Route::get('Contato', [SiteController::class, 'contato'])->name('Contato');
+Route::redirect('/', '/Home');
 
 Route::middleware('locale')->group(function () {
 
     Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
-
-    Route::get('/', function () {
-        return redirect()->route('dashboard');
-    });
 
     Auth::routes();
 
@@ -49,6 +51,8 @@ Route::middleware('locale')->group(function () {
         Route::resource('categoria', CategoriaController::class, ['except' => ['show']]);
         Route::resource('produto', ProdutoController::class);
         Route::resource('showcase', ShowcaseController::class);
+        Route::resource('feedback', FeedbackController::class, ['except' => ['show']]);
+        Route::resource('obras-entregues', ObraEntregueController::class, ['except' => ['show']]);
 
 
         //Rotas para perfil do usuário
